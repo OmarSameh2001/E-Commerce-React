@@ -1,12 +1,17 @@
 {
   "files": {
-    "main.css": "/E-Commerce-React/static/css/main.b1d28ea1.css",
-    "main.js": "/E-Commerce-React/static/js/main.8640a739.js",
+    "main.css": "/E-Commerce-React/static/css/main.5c2fec0a.css",
+    "main.js": "/E-Commerce-React/static/js/main.5b4aeb11.js",
     "static/js/592.7ae711f1.chunk.js": "/E-Commerce-React/static/js/592.7ae711f1.chunk.js",
     "static/media/fa-solid-900.svg": "/E-Commerce-React/static/media/fa-solid-900.7a8b4f130182d19a2d7c.svg",
     "static/media/fa-brands-400.svg": "/E-Commerce-React/static/media/fa-brands-400.2f517e09eb2ca6650ff5.svg",
+    "static/media/slider-image-1.jpeg": "/E-Commerce-React/static/media/slider-image-1.3c3940ee0f1c3b17ff9a.jpeg",
+    "static/media/grocery-banner.png": "/E-Commerce-React/static/media/grocery-banner.2c56649c9cbe2e19b86f.png",
     "static/media/fa-solid-900.eot": "/E-Commerce-React/static/media/fa-solid-900.9bbb245e67a133f6e486.eot",
     "static/media/fa-solid-900.ttf": "/E-Commerce-React/static/media/fa-solid-900.be9ee23c0c6390141475.ttf",
+    "static/media/slider-image-3.jpeg": "/E-Commerce-React/static/media/slider-image-3.7e5c9f7a513f6db6dd5e.jpeg",
+    "static/media/slider-image-2.jpeg": "/E-Commerce-React/static/media/slider-image-2.e510b0de8a4d96a1d5ad.jpeg",
+    "static/media/grocery-banner-2.jpeg": "/E-Commerce-React/static/media/grocery-banner-2.7a4a78a90acc3d5847cb.jpeg",
     "static/media/fa-regular-400.svg": "/E-Commerce-React/static/media/fa-regular-400.4689f52cc96215721344.svg",
     "static/media/fa-brands-400.eot": "/E-Commerce-React/static/media/fa-brands-400.23f19bb08961f37aaf69.eot",
     "static/media/fa-brands-400.ttf": "/E-Commerce-React/static/media/fa-brands-400.527940b104eb2ea366c8.ttf",
@@ -18,13 +23,17 @@
     "static/media/fa-regular-400.ttf": "/E-Commerce-React/static/media/fa-regular-400.491974d108fe4002b2aa.ttf",
     "static/media/fa-regular-400.woff": "/E-Commerce-React/static/media/fa-regular-400.bb58e57c48a3e911f15f.woff",
     "static/media/fa-regular-400.woff2": "/E-Commerce-React/static/media/fa-regular-400.7a3337626410ca2f4071.woff2",
+    "static/media/slick.svg": "/E-Commerce-React/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/E-Commerce-React/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/E-Commerce-React/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/E-Commerce-React/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/E-Commerce-React/index.html",
-    "main.b1d28ea1.css.map": "/E-Commerce-React/static/css/main.b1d28ea1.css.map",
-    "main.8640a739.js.map": "/E-Commerce-React/static/js/main.8640a739.js.map",
+    "main.5c2fec0a.css.map": "/E-Commerce-React/static/css/main.5c2fec0a.css.map",
+    "main.5b4aeb11.js.map": "/E-Commerce-React/static/js/main.5b4aeb11.js.map",
     "592.7ae711f1.chunk.js.map": "/E-Commerce-React/static/js/592.7ae711f1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b1d28ea1.css",
-    "static/js/main.8640a739.js"
+    "static/css/main.5c2fec0a.css",
+    "static/js/main.5b4aeb11.js"
   ]
 }
