@@ -1,5 +1,9 @@
 import "./App.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
 import Layout from "./Components/Layout/Layout";
 import Home from "./Components/Home/Home";
 import Cart from "./Components/Cart/Cart";
@@ -13,8 +17,14 @@ import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
 import { QueryClient, QueryClientProvider } from "react-query";
 import ProductPage from "./Components/ProductPage/ProductPage";
 import CartContextProvider from "./Context/cartContext";
-import { ToastContainer} from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 import Checkout from "./Components/Checkout/Checkout";
+import Orders from "./Components/Orders/Orders";
+import NotFound from "./Components/NotFound/NotFound";
+import WishListContextProvider from "./Context/wishlistContext";
+import Wishlist from "./Components/Wishlist/Wishlist";
+import ForgetPassword from "./Components/ForgetPassword/ForgetPassword";
+import EmailReset from "./Components/EmailReset/EmailReset";
 
 function App() {
   const route = createBrowserRouter([
@@ -24,6 +34,22 @@ function App() {
       children: [
         {
           path: "/home",
+          element: (
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "/E-Commerce-React",
+          element: (
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "/E-Commerce-React",
           element: (
             <ProtectedRoute>
               <Home />
@@ -80,6 +106,22 @@ function App() {
           ),
         },
         {
+          path: "/allorders",
+          element: (
+            <ProtectedRoute>
+              <Orders />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "/wishlist",
+          element: (
+            <ProtectedRoute>
+              <Wishlist />
+            </ProtectedRoute>
+          ),
+        },
+        {
           path: "/register",
           element: <Register />,
         },
@@ -88,12 +130,16 @@ function App() {
           element: <Login />,
         },
         {
+          path: "/resetcode",
+          element: <EmailReset />,
+        },
+        {
+          path: "/forget",
+          element: <ForgetPassword />,
+        },
+        {
           path: "/*",
-          element: (
-            <ProtectedRoute>
-              <Home />
-            </ProtectedRoute>
-          ),
+          element: <NotFound />,
         },
       ],
     },
@@ -102,10 +148,12 @@ function App() {
   return (
     <UserContextProvider>
       <CartContextProvider>
-        <QueryClientProvider client={queryClient}>
-          <RouterProvider router={route} />
-          <ToastContainer />
-        </QueryClientProvider>
+        <WishListContextProvider>
+          <QueryClientProvider client={queryClient}>
+            <RouterProvider router={route} />
+            <ToastContainer />
+          </QueryClientProvider>
+        </WishListContextProvider>
       </CartContextProvider>
     </UserContextProvider>
   );

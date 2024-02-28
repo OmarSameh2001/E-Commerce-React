@@ -115,7 +115,9 @@ export default function Login() {
         >
           If you don't have an account yet click here to register
         </p>
+        
       </form>
+      <button className="btn btn-danger" onClick={() => navigate("/resetcode")}>Forget Password</button>
     </div>
   );
 }

@@ -1,15 +1,15 @@
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
-import "fa-icons";
 import { useQuery } from "react-query";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify'
 import { CartContext} from '../../Context/cartContext'
+import Loader from "../Loader/Loader";
 
 export default function Products() {
   const BaseUrl = "https://ecommerce.routemisr.com";
   const tok = localStorage.getItem("userToken");
-  let { addToCart } = useContext(CartContext)
+  let { addToCart, getCart } = useContext(CartContext)
   const nav = useNavigate();
   async function addProducts(prop) {
     try {
@@ -31,6 +31,7 @@ export default function Products() {
   async function getProducts() {
     return await axios.get(`${BaseUrl}/api/v1/products`, { Headers: { tok } });
   }
+
   let { isLoading, isError, Error, data } = useQuery("Products", getProducts, {
     refetchOnWindowFocus: false,
     refetchOnMount: true,
@@ -39,17 +40,20 @@ export default function Products() {
   });
   console.log(data);
 
-  // useEffect(() => {
-  //   getproducts();
-  // }, []);
+   useEffect(() => {
+     getCart();
+   }, []);
   return (
+    <div >
+      
     <div
-      className="row mx-auto align-items-center px-5"
-      style={{ paddingTop: "100px" }}
+      className="row mx-auto align-items-center px-5 pb-5"
+      style={{ paddingTop: "50px" }}
     >
+      <h2 className="pb-2">FeaturedProducts</h2>
       {data?.data.data.map((product) => {
         return (
-          <div className="col-md-2" >
+          <div key={product.id} className="col-md-2" >
             <Link
               className="text-decoration-none text-dark "
               to={`/productpage/${product.id}`}
@@ -71,11 +75,15 @@ export default function Products() {
             <button onClick={() => addProducts(product?.id)} className="btn btn-success align-center">
               Add To Cart
             </button>
+            
           </div>
         );
       })}
       {isError && <p>{Error}</p>}
-      {isLoading && <h1>Loading...</h1>}
+      
     </div>
+    {isLoading && <Loader />}
+    </div>
+    
   );
 }
